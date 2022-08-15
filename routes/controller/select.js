@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const insertBookModel = require("../model/insert");
+const selectBookModel = require("../model/select");
 
 
-router.post('/insert',  function (req, res, next) {
+router.get('/select',  function (req, res, next) {
     try {
-        let response = insertBookModel.insertBook(req);
+        let response = selectBookModel.selectBook(req);
         console.log(response);
         res.json(response);
     }
